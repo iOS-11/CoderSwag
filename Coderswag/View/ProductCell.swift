@@ -14,6 +14,11 @@ class ProductCell: UICollectionViewCell {
 	@IBOutlet weak var productTitle: UILabel!
 	@IBOutlet weak var productPrice: UILabel!
 	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		self.layer.cornerRadius = 5
+	}
+	
 	func updateViews(product: Product) {
 		productImage.image = UIImage(named: product.imageName)
 		productTitle.text = product.title

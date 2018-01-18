@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProductsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var bgLabel: UILabel!
@@ -54,5 +54,13 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
 		
 		return ProductCell()
 	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let height: CGFloat = view.frame.size.height
+		let width: CGFloat = view.frame.size.width
+		
+		return CGSize(width: width * 0.45, height: height * 0.35)
+	}
+	
 	
 }
